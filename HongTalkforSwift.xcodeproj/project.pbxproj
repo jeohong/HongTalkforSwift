@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */; };
 		CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412A29D2D05600DA4559 /* AppDelegate.swift */; };
 		CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */; };
 		CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412E29D2D05600DA4559 /* ViewController.swift */; };
 		CFD6413229D2D05600DA4559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413029D2D05600DA4559 /* Main.storyboard */; };
 		CFD6413429D2D05700DA4559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413329D2D05700DA4559 /* Assets.xcassets */; };
 		CFD6413729D2D05700DA4559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413529D2D05700DA4559 /* LaunchScreen.storyboard */; };
+		FF345588264EA1FDBCCA3BE3 /* Pods_HongTalkforSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E62CA1AB9F9899329A519E6A /* Pods_HongTalkforSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00172DEDB82FF1BDC1ED68AF /* Pods-HongTalkforSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongTalkforSwift.debug.xcconfig"; path = "Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		73E7636C7B2EFFE8795278A0 /* Pods-HongTalkforSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongTalkforSwift.release.xcconfig"; path = "Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift.release.xcconfig"; sourceTree = "<group>"; };
+		CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFD6412729D2D05600DA4559 /* HongTalkforSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTalkforSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD6412A29D2D05600DA4559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		CFD6413329D2D05700DA4559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD6413629D2D05700DA4559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFD6413829D2D05700DA4559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E62CA1AB9F9899329A519E6A /* Pods_HongTalkforSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongTalkforSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF345588264EA1FDBCCA3BE3 /* Pods_HongTalkforSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15E059D4EA12F69A8537BEEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E62CA1AB9F9899329A519E6A /* Pods_HongTalkforSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		847629FABFD8BB3A9754D41A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00172DEDB82FF1BDC1ED68AF /* Pods-HongTalkforSwift.debug.xcconfig */,
+				73E7636C7B2EFFE8795278A0 /* Pods-HongTalkforSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CFD6411E29D2D05600DA4559 = {
 			isa = PBXGroup;
 			children = (
+				CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */,
 				CFD6412929D2D05600DA4559 /* HongTalkforSwift */,
 				CFD6412829D2D05600DA4559 /* Products */,
+				847629FABFD8BB3A9754D41A /* Pods */,
+				15E059D4EA12F69A8537BEEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD6413B29D2D05700DA4559 /* Build configuration list for PBXNativeTarget "HongTalkforSwift" */;
 			buildPhases = (
+				DD1F6FA644AC33619F2AECCC /* [CP] Check Pods Manifest.lock */,
 				CFD6412329D2D05600DA4559 /* Sources */,
 				CFD6412429D2D05600DA4559 /* Frameworks */,
 				CFD6412529D2D05600DA4559 /* Resources */,
+				55ABF67BD5647B2535789EF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD6413729D2D05700DA4559 /* LaunchScreen.storyboard in Resources */,
+				CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */,
 				CFD6413429D2D05700DA4559 /* Assets.xcassets in Resources */,
 				CFD6413229D2D05600DA4559 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55ABF67BD5647B2535789EF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD1F6FA644AC33619F2AECCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HongTalkforSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFD6412329D2D05600DA4559 /* Sources */ = {
@@ -282,6 +354,7 @@
 		};
 		CFD6413C29D2D05700DA4559 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00172DEDB82FF1BDC1ED68AF /* Pods-HongTalkforSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +383,7 @@
 		};
 		CFD6413D29D2D05700DA4559 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E7636C7B2EFFE8795278A0 /* Pods-HongTalkforSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
