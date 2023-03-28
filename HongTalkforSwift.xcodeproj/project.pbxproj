@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29C56729D2D7CB003D39C3 /* UIColor+.swift */; };
+		CF29C56A29D2D983003D39C3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */; };
 		CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */; };
 		CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412A29D2D05600DA4559 /* AppDelegate.swift */; };
 		CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		00172DEDB82FF1BDC1ED68AF /* Pods-HongTalkforSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongTalkforSwift.debug.xcconfig"; path = "Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		73E7636C7B2EFFE8795278A0 /* Pods-HongTalkforSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongTalkforSwift.release.xcconfig"; path = "Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift.release.xcconfig"; sourceTree = "<group>"; };
+		CF29C56729D2D7CB003D39C3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFD6412729D2D05600DA4559 /* HongTalkforSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTalkforSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD6412A29D2D05600DA4559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +65,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CF29C56629D2D7BE003D39C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CF29C56729D2D7CB003D39C3 /* UIColor+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		CFD6411E29D2D05600DA4559 = {
 			isa = PBXGroup;
 			children = (
+				CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */,
 				CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */,
 				CFD6412929D2D05600DA4559 /* HongTalkforSwift */,
 				CFD6412829D2D05600DA4559 /* Products */,
@@ -83,6 +96,7 @@
 		CFD6412929D2D05600DA4559 /* HongTalkforSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CF29C56629D2D7BE003D39C3 /* Extension */,
 				CFD6412A29D2D05600DA4559 /* AppDelegate.swift */,
 				CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */,
 				CFD6412E29D2D05600DA4559 /* ViewController.swift */,
@@ -155,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD6413729D2D05700DA4559 /* LaunchScreen.storyboard in Resources */,
+				CF29C56A29D2D983003D39C3 /* RemoteConfigDefaults.plist in Resources */,
 				CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */,
 				CFD6413429D2D05700DA4559 /* Assets.xcassets in Resources */,
 				CFD6413229D2D05600DA4559 /* Main.storyboard in Resources */,
@@ -211,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */,
+				CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */,
 				CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */,
 				CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */,
 			);
