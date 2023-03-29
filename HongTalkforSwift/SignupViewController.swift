@@ -73,8 +73,6 @@ class SignupViewController: UIViewController {
                     }
                 }
             }
-            
-//            Database.database().reference().child("users").child(uid!).setValue(["userName": self.name.text])
         }
     }
     

@@ -43,7 +43,7 @@ class PeopleViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(20)
+            make.top.equalTo(view)
             make.bottom.left.right.equalTo(view)
         }
     }
@@ -51,6 +51,10 @@ class PeopleViewController: UIViewController {
 
 // Delegate
 extension PeopleViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController")
+        self.navigationController?.pushViewController(chatVC!, animated: true)
+    }
 }
 
 // DataSource
@@ -82,7 +86,7 @@ extension PeopleViewController: UITableViewDataSource {
         cell.addSubview(label)
         label.snp.makeConstraints { make in
             make.centerY.equalTo(cell)
-            make.left.equalTo(imageView.snp.right).offset(30)
+            make.left.equalTo(imageView.snp.right).offset(20)
         }
         
         label.text = array[indexPath.row].userName
@@ -91,6 +95,6 @@ extension PeopleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 }
