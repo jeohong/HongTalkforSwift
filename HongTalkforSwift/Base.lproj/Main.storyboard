@@ -297,6 +297,7 @@
                     </view>
                     <connections>
                         <outlet property="sendButton" destination="K64-14-DFs" id="HQg-Sw-q9Q"/>
+                        <outlet property="textField" destination="OQa-r4-ztA" id="XTK-pB-b2f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljy-QU-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
