@@ -284,6 +284,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-1G-mdn">
+                                <rect key="frame" x="0.0" y="59" width="393" height="716"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier=" " preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="70" id="riy-7V-dFe">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="riy-7V-dFe" id="gVz-kE-CLS">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vhh-dC-NNi" id="ziN-eN-aVh"/>
+                                    <outlet property="delegate" destination="Vhh-dC-NNi" id="F7c-IJ-lmJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NqM-iq-9wA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,11 +309,16 @@
                             <constraint firstItem="NqM-iq-9wA" firstAttribute="bottom" secondItem="OQa-r4-ztA" secondAttribute="bottom" id="0pN-CH-hhp"/>
                             <constraint firstItem="NqM-iq-9wA" firstAttribute="trailing" secondItem="K64-14-DFs" secondAttribute="trailing" constant="16" id="18k-j0-0m8"/>
                             <constraint firstItem="K64-14-DFs" firstAttribute="bottom" secondItem="NqM-iq-9wA" secondAttribute="bottom" id="9iy-pq-lwO"/>
+                            <constraint firstItem="K64-14-DFs" firstAttribute="top" secondItem="kXC-1G-mdn" secondAttribute="bottom" constant="8" id="GhZ-l5-ASE"/>
+                            <constraint firstItem="kXC-1G-mdn" firstAttribute="top" secondItem="NqM-iq-9wA" secondAttribute="top" id="QDL-7X-nx9"/>
+                            <constraint firstItem="kXC-1G-mdn" firstAttribute="leading" secondItem="NqM-iq-9wA" secondAttribute="leading" id="WSx-8W-kax"/>
                             <constraint firstItem="OQa-r4-ztA" firstAttribute="leading" secondItem="NqM-iq-9wA" secondAttribute="leading" constant="16" id="iHU-cQ-0b8"/>
+                            <constraint firstItem="kXC-1G-mdn" firstAttribute="trailing" secondItem="NqM-iq-9wA" secondAttribute="trailing" id="ujn-Wq-VIs"/>
                             <constraint firstItem="K64-14-DFs" firstAttribute="leading" secondItem="OQa-r4-ztA" secondAttribute="trailing" constant="5" id="yMw-iG-Hxz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chattingView" destination="kXC-1G-mdn" id="8Fw-Hz-PV7"/>
                         <outlet property="sendButton" destination="K64-14-DFs" id="HQg-Sw-q9Q"/>
                         <outlet property="textField" destination="OQa-r4-ztA" id="XTK-pB-b2f"/>
                     </connections>

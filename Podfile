@@ -13,4 +13,5 @@ pod 'Firebase/RemoteConfig'
 pod 'TextFieldEffects'
 pod 'FirebaseDatabase'
 pod 'FirebaseStorage'
+pod 'ObjectMapper', '~> 3.5'
 end
