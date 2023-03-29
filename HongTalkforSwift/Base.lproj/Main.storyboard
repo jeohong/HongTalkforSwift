@@ -43,7 +43,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="R1X-Y1-FJq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -59,7 +59,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QMm-Bw-MPJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -316,10 +316,10 @@
     </scenes>
     <designables>
         <designable name="5Um-85-KOw">
-            <size key="intrinsicContentSize" width="61" height="31"/>
+            <size key="intrinsicContentSize" width="48.666666666666664" height="23.666666666666668"/>
         </designable>
         <designable name="Oxj-B6-kqv">
-            <size key="intrinsicContentSize" width="98.666666666666671" height="29"/>
+            <size key="intrinsicContentSize" width="76.666666666666671" height="22"/>
         </designable>
         <designable name="V23-PG-hsp">
             <size key="intrinsicContentSize" width="52" height="23.666666666666668"/>
