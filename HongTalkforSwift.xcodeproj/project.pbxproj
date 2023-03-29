@@ -16,6 +16,7 @@
 		CFD6413229D2D05600DA4559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413029D2D05600DA4559 /* Main.storyboard */; };
 		CFD6413429D2D05700DA4559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413329D2D05700DA4559 /* Assets.xcassets */; };
 		CFD6413729D2D05700DA4559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD6413529D2D05700DA4559 /* LaunchScreen.storyboard */; };
+		CFDC7DF729D3B1C1000EFFB2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC7DF629D3B1C1000EFFB2 /* SignupViewController.swift */; };
 		CFE7D06229D2E2C60041F348 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7D06129D2E2C60041F348 /* LoginViewController.swift */; };
 		FF345588264EA1FDBCCA3BE3 /* Pods_HongTalkforSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E62CA1AB9F9899329A519E6A /* Pods_HongTalkforSwift.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		CFD6413329D2D05700DA4559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFD6413629D2D05700DA4559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFD6413829D2D05700DA4559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFDC7DF629D3B1C1000EFFB2 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CFE7D06129D2E2C60041F348 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E62CA1AB9F9899329A519E6A /* Pods_HongTalkforSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HongTalkforSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +109,7 @@
 				CFD6413529D2D05700DA4559 /* LaunchScreen.storyboard */,
 				CFD6413829D2D05700DA4559 /* Info.plist */,
 				CFE7D06129D2E2C60041F348 /* LoginViewController.swift */,
+				CFDC7DF629D3B1C1000EFFB2 /* SignupViewController.swift */,
 			);
 			path = HongTalkforSwift;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDC7DF729D3B1C1000EFFB2 /* SignupViewController.swift in Sources */,
 				CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */,
 				CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */,
 				CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */,
