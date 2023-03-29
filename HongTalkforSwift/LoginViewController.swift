@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { auth, user in
             if (user != nil) {
-                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
                 mainVC.modalPresentationStyle = .fullScreen
                 self.present(mainVC, animated: true)
             }

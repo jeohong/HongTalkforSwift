@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "addToPhoto@1x.png",
+      "filename" : "accountIcon@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "addToPhoto@2x.png",
+      "filename" : "accountIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "addToPhoto@3x.png",
+      "filename" : "accountIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

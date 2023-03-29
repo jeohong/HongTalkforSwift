@@ -65,11 +65,11 @@ class SignupViewController: UIViewController {
             
             imageRef.putData(image!) { data, err in
                 imageRef.downloadURL { url, err in
-                    Database.database().reference().child("user").child(uid!).setValue(["userName": self.name.text, "profileImageUrl": url?.absoluteString])
+                    Database.database().reference().child("users").child(uid!).setValue(["userName": self.name.text, "profileImageUrl": url?.absoluteString])
                 }
             }
             
-            Database.database().reference().child("users").child(uid!).setValue(["name": self.name.text])
+            Database.database().reference().child("users").child(uid!).setValue(["userName": self.name.text])
         }
     }
     
