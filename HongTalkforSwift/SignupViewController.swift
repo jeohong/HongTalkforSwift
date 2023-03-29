@@ -56,6 +56,7 @@ class SignupViewController: UIViewController {
     
     @objc
     func signupEvent() {
+        // MARK: 강제 언래핑 추후 고민해서 해제할것
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, err) in
             let uid = user?.user.uid
             
