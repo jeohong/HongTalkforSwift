@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignupViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
@@ -15,6 +16,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var cancleButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     
     let remoteConfig = RemoteConfig.remoteConfig()
@@ -24,15 +26,24 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // statusBar 추가
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints { make in
             make.right.top.left.equalTo(self.view)
             make.height.equalTo(20)
         }
         
+        // Event , Setting
+        setupImageView()
         setupColor()
         joinButton.addTarget(self, action: #selector(signupEvent), for: .touchUpInside)
         cancleButton.addTarget(self, action: #selector(cancleEvent), for: .touchUpInside)
+        
+    }
+    
+    func setupImageView() {
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imagePicker)))
     }
     
     func setupColor() {
@@ -48,6 +59,15 @@ class SignupViewController: UIViewController {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, err) in
             let uid = user?.user.uid
             
+            let image = self.imageView.image!.jpegData(compressionQuality: 0.1)
+            let imageRef = Storage.storage().reference().child("userImages").child(uid!)
+            
+            imageRef.putData(image!) { data, err in
+                imageRef.downloadURL { url, err in
+                    Database.database().reference().child("user").child(uid!).setValue(["userName": self.name.text, "profileImageUrl": url?.absoluteString])
+                }
+            }
+            
             Database.database().reference().child("users").child(uid!).setValue(["name": self.name.text])
         }
     }
@@ -56,5 +76,29 @@ class SignupViewController: UIViewController {
     func cancleEvent() {
         self.dismiss(animated: true)
     }
+}
 
+// Navigation Delegate
+extension SignupViewController: UINavigationControllerDelegate {
+    
+}
+
+// UIImagePicker Delegate
+extension SignupViewController: UIImagePickerControllerDelegate {
+    @objc
+    func imagePicker() {
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
+        self.present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        dismiss(animated: true)
+    }
 }

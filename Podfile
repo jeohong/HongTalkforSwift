@@ -12,5 +12,5 @@ pod 'FirebaseFirestore'
 pod 'Firebase/RemoteConfig'
 pod 'TextFieldEffects'
 pod 'FirebaseDatabase'
-
+pod 'FirebaseStorage'
 end
