@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -262,20 +263,45 @@
             </objects>
             <point key="canvasLocation" x="4248.0916030534354" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="LOX-E5-8Vd">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="Vhh-dC-NNi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="Vhh-dC-NNi" customClass="ChatViewController" customModule="HongTalkforSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qRT-hO-Lag">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K64-14-DFs">
+                                <rect key="frame" x="323" y="783" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="전송"/>
+                                <connections>
+                                    <action selector="createRoom:" destination="Vhh-dC-NNi" eventType="touchUpInside" id="KZR-4C-yJT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-r4-ztA">
+                                <rect key="frame" x="16" y="784" width="302" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NqM-iq-9wA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NqM-iq-9wA" firstAttribute="bottom" secondItem="OQa-r4-ztA" secondAttribute="bottom" id="0pN-CH-hhp"/>
+                            <constraint firstItem="NqM-iq-9wA" firstAttribute="trailing" secondItem="K64-14-DFs" secondAttribute="trailing" constant="16" id="18k-j0-0m8"/>
+                            <constraint firstItem="K64-14-DFs" firstAttribute="bottom" secondItem="NqM-iq-9wA" secondAttribute="bottom" id="9iy-pq-lwO"/>
+                            <constraint firstItem="OQa-r4-ztA" firstAttribute="leading" secondItem="NqM-iq-9wA" secondAttribute="leading" constant="16" id="iHU-cQ-0b8"/>
+                            <constraint firstItem="K64-14-DFs" firstAttribute="leading" secondItem="OQa-r4-ztA" secondAttribute="trailing" constant="5" id="yMw-iG-Hxz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sendButton" destination="K64-14-DFs" id="HQg-Sw-q9Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljy-QU-vYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4246" y="672"/>
+            <point key="canvasLocation" x="4245.0381679389311" y="671.83098591549299"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Y0d-ry-0nn">

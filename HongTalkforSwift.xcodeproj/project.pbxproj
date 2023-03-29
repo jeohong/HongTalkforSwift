@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CF0D997029D3D48A00AD7498 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D996F29D3D48900AD7498 /* PeopleViewController.swift */; };
 		CF0D997229D3DB0B00AD7498 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D997129D3DB0B00AD7498 /* UserModel.swift */; };
+		CF0D997429D3FC2500AD7498 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D997329D3FC2500AD7498 /* ChatViewController.swift */; };
+		CF0D997729D3FCDB00AD7498 /* CharModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0D997629D3FCDB00AD7498 /* CharModel.swift */; };
 		CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29C56729D2D7CB003D39C3 /* UIColor+.swift */; };
 		CF29C56A29D2D983003D39C3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */; };
 		CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */; };
@@ -28,6 +30,8 @@
 		73E7636C7B2EFFE8795278A0 /* Pods-HongTalkforSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HongTalkforSwift.release.xcconfig"; path = "Target Support Files/Pods-HongTalkforSwift/Pods-HongTalkforSwift.release.xcconfig"; sourceTree = "<group>"; };
 		CF0D996F29D3D48900AD7498 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		CF0D997129D3DB0B00AD7498 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CF0D997329D3FC2500AD7498 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CF0D997629D3FCDB00AD7498 /* CharModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharModel.swift; sourceTree = "<group>"; };
 		CF29C56729D2D7CB003D39C3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CF0D997529D3FCC300AD7498 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF0D997129D3DB0B00AD7498 /* UserModel.swift */,
+				CF0D997629D3FCDB00AD7498 /* CharModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CF29C56629D2D7BE003D39C3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 		CFD6412929D2D05600DA4559 /* HongTalkforSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CF0D997529D3FCC300AD7498 /* Model */,
 				CF29C56629D2D7BE003D39C3 /* Extension */,
 				CFD6412A29D2D05600DA4559 /* AppDelegate.swift */,
 				CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */,
@@ -115,7 +129,7 @@
 				CFE7D06129D2E2C60041F348 /* LoginViewController.swift */,
 				CFDC7DF629D3B1C1000EFFB2 /* SignupViewController.swift */,
 				CF0D996F29D3D48900AD7498 /* PeopleViewController.swift */,
-				CF0D997129D3DB0B00AD7498 /* UserModel.swift */,
+				CF0D997329D3FC2500AD7498 /* ChatViewController.swift */,
 			);
 			path = HongTalkforSwift;
 			sourceTree = "<group>";
@@ -242,8 +256,10 @@
 				CF0D997229D3DB0B00AD7498 /* UserModel.swift in Sources */,
 				CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */,
 				CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */,
+				CF0D997729D3FCDB00AD7498 /* CharModel.swift in Sources */,
 				CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */,
 				CFE7D06229D2E2C60041F348 /* LoginViewController.swift in Sources */,
+				CF0D997429D3FC2500AD7498 /* ChatViewController.swift in Sources */,
 				CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
