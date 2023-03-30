@@ -7,9 +7,10 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var email: UITextField!
@@ -28,7 +29,7 @@ class LoginViewController: UIViewController {
         statusBar.snp.makeConstraints { make in
             make.right.top.left.equalTo(self.view)
             make.height.equalTo(UIApplication.shared.statusBarFrame.size.height)
-    
+            
         }
         color = remoteConfig["splash_background"].stringValue
         
@@ -44,6 +45,17 @@ class LoginViewController: UIViewController {
                 let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewTabBarController") as! UITabBarController
                 mainVC.modalPresentationStyle = .fullScreen
                 self.present(mainVC, animated: true)
+                
+                let uid = Auth.auth().currentUser?.uid
+                // 문서 업데이트로 토큰 가져오는 방법이 변경됨
+                Messaging.messaging().token { token, error in
+                    if let error = error {
+                        print("Error fetching remote FCM registration token: \(error)")
+                    } else if let token = token {
+                        print("Remote instance ID token: \(token)")
+                        Database.database().reference().child("users").child(uid!).updateChildValues(["pushToken": token])
+                    }
+                }
             }
         }
     }
