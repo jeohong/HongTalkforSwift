@@ -15,6 +15,7 @@
 		CF29C56A29D2D983003D39C3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */; };
 		CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */; };
 		CF64882F29D542CB0082EA26 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64882E29D542CB0082EA26 /* ChatRoomsViewController.swift */; };
+		CF64883129D54DB20082EA26 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64883029D54DB20082EA26 /* Int+.swift */; };
 		CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412A29D2D05600DA4559 /* AppDelegate.swift */; };
 		CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */; };
 		CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412E29D2D05600DA4559 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF64882E29D542CB0082EA26 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
+		CF64883029D54DB20082EA26 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		CFD6412729D2D05600DA4559 /* HongTalkforSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTalkforSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD6412A29D2D05600DA4559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CF29C56729D2D7CB003D39C3 /* UIColor+.swift */,
+				CF64883029D54DB20082EA26 /* Int+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				CFE7D06229D2E2C60041F348 /* LoginViewController.swift in Sources */,
 				CF0D997429D3FC2500AD7498 /* ChatViewController.swift in Sources */,
 				CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */,
+				CF64883129D54DB20082EA26 /* Int+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

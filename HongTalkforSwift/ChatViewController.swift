@@ -46,7 +46,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -98,7 +98,8 @@ class ChatViewController: UIViewController {
             // 방이 이미 있을경우 해당 방으로 입장
             let value: Dictionary<String,Any> = [
                 "uid": uid!,
-                "message": textField.text!
+                "message": textField.text!,
+                "timestamp": ServerValue.timestamp()
             ]
             Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value) { error, dataRef in
                 self.textField.text = ""
@@ -166,6 +167,9 @@ extension ChatViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             cell.label_message.text = self.comments[indexPath.row].message
             cell.label_message.numberOfLines = 0
+            if let time = self.comments[indexPath.row].timestamp {
+                cell.label_timestamp.text = time.toDayTime
+            }
             
             return cell
         } else {
@@ -174,9 +178,12 @@ extension ChatViewController: UITableViewDataSource {
             cell.label_message.text = self.comments[indexPath.row].message
             cell.label_message.numberOfLines = 0
             
+            if let time = self.comments[indexPath.row].timestamp {
+                cell.label_timestamp.text = time.toDayTime
+            }
+            
             let url = URL(string: (self.userModel?.profileImageUrl)!)
             URLSession.shared.dataTask(with: url!) { data, response, error in
-                
                 DispatchQueue.main.async {
                     cell.imageView_Profile.image = UIImage(data: data!)
                     cell.imageView_Profile.layer.cornerRadius = cell.imageView_Profile.frame.width / 2
@@ -191,10 +198,12 @@ extension ChatViewController: UITableViewDataSource {
 
 class MyMessageCell: UITableViewCell {
     @IBOutlet weak var label_message: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
 }
 
 class DestinationMessageCell: UITableViewCell {
     @IBOutlet weak var label_message: UILabel!
     @IBOutlet weak var imageView_Profile: UIImageView!
     @IBOutlet weak var label_name: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
 }
