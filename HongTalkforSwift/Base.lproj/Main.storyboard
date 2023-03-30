@@ -406,14 +406,64 @@
         <!--Chat-->
         <scene sceneID="Y0d-ry-0nn">
             <objects>
-                <viewController id="lE5-Qi-tNm" sceneMemberID="viewController">
+                <viewController id="lE5-Qi-tNm" customClass="ChatRoomsViewController" customModule="HongTalkforSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ya9-IA-x4g">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CV0-0e-OAr">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="70" id="W4z-AV-O41">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W4z-AV-O41" id="DKp-OU-mP2">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eSA-jC-T1C">
+                                                    <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="T9I-sO-7DO"/>
+                                                        <constraint firstAttribute="height" constant="50" id="rTc-As-G0N"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3s-3z-uX8">
+                                                    <rect key="frame" x="58" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eSA-jC-T1C" firstAttribute="leading" secondItem="DKp-OU-mP2" secondAttribute="leading" id="EYZ-nN-c6K"/>
+                                                <constraint firstItem="d3s-3z-uX8" firstAttribute="top" secondItem="DKp-OU-mP2" secondAttribute="topMargin" id="Ph4-gG-UTA"/>
+                                                <constraint firstItem="d3s-3z-uX8" firstAttribute="leading" secondItem="eSA-jC-T1C" secondAttribute="trailing" constant="8" symbolic="YES" id="ffa-wc-Fnz"/>
+                                                <constraint firstItem="eSA-jC-T1C" firstAttribute="centerY" secondItem="DKp-OU-mP2" secondAttribute="centerY" id="qZG-Kv-CGn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lE5-Qi-tNm" id="QvB-7Y-zkG"/>
+                                    <outlet property="delegate" destination="lE5-Qi-tNm" id="Iz7-gj-YDf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FK6-bE-8fK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FK6-bE-8fK" firstAttribute="bottom" secondItem="CV0-0e-OAr" secondAttribute="bottom" id="8Sj-Bi-sQJ"/>
+                            <constraint firstItem="CV0-0e-OAr" firstAttribute="leading" secondItem="FK6-bE-8fK" secondAttribute="leading" id="9kL-bg-ZpC"/>
+                            <constraint firstItem="FK6-bE-8fK" firstAttribute="trailing" secondItem="CV0-0e-OAr" secondAttribute="trailing" id="Ksw-of-t5Y"/>
+                            <constraint firstItem="CV0-0e-OAr" firstAttribute="top" secondItem="FK6-bE-8fK" secondAttribute="top" id="neK-iM-WLY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Chat" image="chatIcon" id="5QA-0n-FgC"/>
+                    <connections>
+                        <outlet property="chatRoomList" destination="CV0-0e-OAr" id="Rh7-bl-53o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYV-2M-oEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

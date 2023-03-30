@@ -14,6 +14,7 @@
 		CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29C56729D2D7CB003D39C3 /* UIColor+.swift */; };
 		CF29C56A29D2D983003D39C3 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */; };
 		CF3D9F4129D2D30E005F2641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */; };
+		CF64882F29D542CB0082EA26 /* ChatRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF64882E29D542CB0082EA26 /* ChatRoomsViewController.swift */; };
 		CFD6412B29D2D05600DA4559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412A29D2D05600DA4559 /* AppDelegate.swift */; };
 		CFD6412D29D2D05600DA4559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */; };
 		CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD6412E29D2D05600DA4559 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		CF29C56729D2D7CB003D39C3 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		CF29C56929D2D983003D39C3 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		CF3D9F4029D2D30E005F2641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF64882E29D542CB0082EA26 /* ChatRoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsViewController.swift; sourceTree = "<group>"; };
 		CFD6412729D2D05600DA4559 /* HongTalkforSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTalkforSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD6412A29D2D05600DA4559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD6412C29D2D05600DA4559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CF64882D29D542AE0082EA26 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CF0D996F29D3D48900AD7498 /* PeopleViewController.swift */,
+				CF64882E29D542CB0082EA26 /* ChatRoomsViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		CFD6411E29D2D05600DA4559 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +128,7 @@
 		CFD6412929D2D05600DA4559 /* HongTalkforSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CF64882D29D542AE0082EA26 /* TabBar */,
 				CF0D997529D3FCC300AD7498 /* Model */,
 				CF29C56629D2D7BE003D39C3 /* Extension */,
 				CFD6412A29D2D05600DA4559 /* AppDelegate.swift */,
@@ -128,7 +140,6 @@
 				CFD6413829D2D05700DA4559 /* Info.plist */,
 				CFE7D06129D2E2C60041F348 /* LoginViewController.swift */,
 				CFDC7DF629D3B1C1000EFFB2 /* SignupViewController.swift */,
-				CF0D996F29D3D48900AD7498 /* PeopleViewController.swift */,
 				CF0D997329D3FC2500AD7498 /* ChatViewController.swift */,
 			);
 			path = HongTalkforSwift;
@@ -253,6 +264,7 @@
 			files = (
 				CF0D997029D3D48A00AD7498 /* PeopleViewController.swift in Sources */,
 				CFDC7DF729D3B1C1000EFFB2 /* SignupViewController.swift in Sources */,
+				CF64882F29D542CB0082EA26 /* ChatRoomsViewController.swift in Sources */,
 				CF0D997229D3DB0B00AD7498 /* UserModel.swift in Sources */,
 				CFD6412F29D2D05600DA4559 /* ViewController.swift in Sources */,
 				CF29C56829D2D7CB003D39C3 /* UIColor+.swift in Sources */,
