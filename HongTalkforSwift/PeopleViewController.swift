@@ -47,7 +47,7 @@ class PeopleViewController: UIViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(PeopleViewTableCell.self, forCellReuseIdentifier: "Cell")
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view)
@@ -74,10 +74,9 @@ extension PeopleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PeopleViewTableCell
         
-        let imageView = UIImageView()
-        cell.addSubview(imageView)
+        let imageView = cell.imageview!
         imageView.snp.makeConstraints { make in
             make.centerY.equalTo(cell)
             make.left.equalTo(cell).offset(10)
@@ -92,8 +91,7 @@ extension PeopleViewController: UITableViewDataSource {
             }
         }.resume()
         
-        let label = UILabel()
-        cell.addSubview(label)
+        let label = cell.label!
         label.snp.makeConstraints { make in
             make.centerY.equalTo(cell)
             make.left.equalTo(imageView.snp.right).offset(20)
@@ -106,5 +104,20 @@ extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+}
+
+class PeopleViewTableCell: UITableViewCell {
+    var imageview: UIImageView! = UIImageView()
+    var label: UILabel! = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.addSubview(imageview)
+        self.addSubview(label)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

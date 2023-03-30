@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K64-14-DFs">
-                                <rect key="frame" x="323" y="783" width="54" height="35"/>
+                                <rect key="frame" x="323" y="763.66666666666663" width="54" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="전송"/>
                                 <connections>
@@ -280,12 +280,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQa-r4-ztA">
-                                <rect key="frame" x="16" y="784" width="302" height="34"/>
+                                <rect key="frame" x="16" y="764" width="302" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-1G-mdn">
-                                <rect key="frame" x="0.0" y="59" width="393" height="716"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="696.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier=" " preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMessageCell" id="riy-7V-dFe" customClass="MyMessageCell" customModule="HongTalkforSwift" customModuleProvider="target">
@@ -381,10 +381,10 @@
                         <viewLayoutGuide key="safeArea" id="NqM-iq-9wA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NqM-iq-9wA" firstAttribute="bottom" secondItem="OQa-r4-ztA" secondAttribute="bottom" id="0pN-CH-hhp"/>
                             <constraint firstItem="NqM-iq-9wA" firstAttribute="trailing" secondItem="K64-14-DFs" secondAttribute="trailing" constant="16" id="18k-j0-0m8"/>
-                            <constraint firstItem="K64-14-DFs" firstAttribute="bottom" secondItem="NqM-iq-9wA" secondAttribute="bottom" id="9iy-pq-lwO"/>
+                            <constraint firstItem="NqM-iq-9wA" firstAttribute="bottom" secondItem="K64-14-DFs" secondAttribute="bottom" constant="20" id="9iy-pq-lwO"/>
                             <constraint firstItem="K64-14-DFs" firstAttribute="top" secondItem="kXC-1G-mdn" secondAttribute="bottom" constant="8" id="GhZ-l5-ASE"/>
+                            <constraint firstItem="OQa-r4-ztA" firstAttribute="centerY" secondItem="K64-14-DFs" secondAttribute="centerY" id="P6b-1x-pNX"/>
                             <constraint firstItem="kXC-1G-mdn" firstAttribute="top" secondItem="NqM-iq-9wA" secondAttribute="top" id="QDL-7X-nx9"/>
                             <constraint firstItem="kXC-1G-mdn" firstAttribute="leading" secondItem="NqM-iq-9wA" secondAttribute="leading" id="WSx-8W-kax"/>
                             <constraint firstItem="OQa-r4-ztA" firstAttribute="leading" secondItem="NqM-iq-9wA" secondAttribute="leading" constant="16" id="iHU-cQ-0b8"/>
@@ -393,6 +393,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstrain" destination="9iy-pq-lwO" id="vKU-2G-RXK"/>
                         <outlet property="chattingView" destination="kXC-1G-mdn" id="8Fw-Hz-PV7"/>
                         <outlet property="sendButton" destination="K64-14-DFs" id="HQg-Sw-q9Q"/>
                         <outlet property="textField" destination="OQa-r4-ztA" id="XTK-pB-b2f"/>
