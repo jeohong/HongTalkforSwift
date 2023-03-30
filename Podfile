@@ -15,4 +15,5 @@ pod 'FirebaseDatabase'
 pod 'FirebaseStorage'
 pod 'ObjectMapper', '~> 3.5'
 pod 'FirebaseMessaging'
+pod 'Alamofire'
 end
