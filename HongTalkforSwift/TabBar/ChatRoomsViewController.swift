@@ -13,6 +13,7 @@ class ChatRoomsViewController: UIViewController {
     
     var uid: String!
     var chatrooms: [ChatModel]! = []
+    var destinationUsers: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,15 @@ class ChatRoomsViewController: UIViewController {
 }
 
 extension ChatRoomsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let destinationUid = self.destinationUsers[indexPath.row]
+        let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        
+        chatVC.destinationUid = destinationUid
+        self.navigationController?.pushViewController(chatVC, animated: true)
+    }
 }
 
 extension ChatRoomsViewController: UITableViewDataSource {
@@ -58,6 +67,7 @@ extension ChatRoomsViewController: UITableViewDataSource {
         for item in chatrooms[indexPath.row].users {
             if (item.key != self.uid) {
                 destinationUid = item.key
+                destinationUsers.append(destinationUid!)
             }
         }
         
@@ -78,6 +88,9 @@ extension ChatRoomsViewController: UITableViewDataSource {
             
             let lastMessageKey = self.chatrooms[indexPath.row].comments.keys.sorted(){ $0 > $1 }
             cell.label_lastMessage.text = self.chatrooms[indexPath.row].comments[lastMessageKey[0]]?.message
+            
+            let unixTime = self.chatrooms[indexPath.row].comments[lastMessageKey[0]]?.timestamp
+            cell.label_timestamp.text = unixTime?.toDayTime
         }
         
         return cell
@@ -88,5 +101,6 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var label_title: UILabel!
     @IBOutlet weak var label_lastMessage: UILabel!
+    @IBOutlet weak var label_timestamp: UILabel!
     
 }
