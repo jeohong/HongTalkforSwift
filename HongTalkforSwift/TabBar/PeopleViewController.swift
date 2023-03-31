@@ -42,6 +42,21 @@ class PeopleViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        var selectFriendButton = UIButton()
+        view.addSubview(selectFriendButton)
+        selectFriendButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.right.equalTo(view).offset(-20)
+        }
+        
+        selectFriendButton.backgroundColor = .black
+        selectFriendButton.addTarget(self, action: #selector(showSelectFriendController), for: .touchUpInside)
+    }
+    
+    @objc
+    func showSelectFriendController() {
+        self.performSegue(withIdentifier: "SelectFriendSegue", sender: nil)
     }
     
     func setupTableView() {
