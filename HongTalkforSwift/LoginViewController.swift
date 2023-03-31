@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                         print("Remote instance ID token: \(token)")
                         Database.database().reference().child("users").child(uid!).updateChildValues(["pushToken": token])
                     }
-                }
+                }                
             }
         }
     }

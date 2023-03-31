@@ -102,3 +102,4 @@ iOSInjectionProject/
 
 GoogleService-Info.plist
 RemoteConfigDefaults.plist
+API_Key.swift

@@ -61,6 +61,10 @@ class SignupViewController: UIViewController {
             let uid = user?.user.uid
             
             let image = self.imageView.image!.jpegData(compressionQuality: 0.1)
+            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+            changeRequest?.displayName = self.name.text!
+            changeRequest?.commitChanges(completion: nil)
+            
             let imageRef = Storage.storage().reference().child("userImages").child(uid!)
             
             imageRef.putData(image!) { data, err in

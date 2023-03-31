@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Alamofire
 
 class ChatViewController: UIViewController {
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
@@ -14,12 +15,11 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var chattingView: UITableView!
     
-    
     var uid: String?
     var chatRoomUid: String?
     
     var comments: [ChatModel.Comment] = []
-    var userModel: UserModel?
+    var destinationUserModel: UserModel?
     
     public var destinationUid: String? // 채팅할 대상의 UID
     
@@ -102,8 +102,32 @@ class ChatViewController: UIViewController {
                 "timestamp": ServerValue.timestamp()
             ]
             Database.database().reference().child("chatrooms").child(chatRoomUid!).child("comments").childByAutoId().setValue(value) { error, dataRef in
+                self.sendFcm()
                 self.textField.text = ""
             }
+        }
+    }
+    
+    func sendFcm() {
+        let url = "https://fcm.googleapis.com/fcm/send"
+        
+        let header: HTTPHeaders = [
+            "Content-Type":"application/json",
+            "Authorization":"key="
+        ]
+        
+        let username = Auth.auth().currentUser?.displayName
+        
+        var notificationModel = NotificationModel()
+        notificationModel.to = destinationUserModel?.pushToken
+        notificationModel.notification.title = username
+        notificationModel.notification.body = textField.text
+        notificationModel.data.title = username
+        notificationModel.data.body = textField.text
+        
+        let params = notificationModel.toJSON()
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { response in
+            print(response.result)
         }
     }
     
@@ -127,8 +151,8 @@ class ChatViewController: UIViewController {
     
     func getDestinationInfo() {
         Database.database().reference().child("users").child(self.destinationUid!).observeSingleEvent(of: .value) { dataSnapshot in
-            self.userModel = UserModel()
-            self.userModel?.setValuesForKeys(dataSnapshot.value as! [String:Any])
+            self.destinationUserModel = UserModel()
+            self.destinationUserModel?.setValuesForKeys(dataSnapshot.value as! [String:Any])
             self.getMessageList()
         }
     }
@@ -174,7 +198,7 @@ extension ChatViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
-            cell.label_name.text = userModel?.userName
+            cell.label_name.text = destinationUserModel?.userName
             cell.label_message.text = self.comments[indexPath.row].message
             cell.label_message.numberOfLines = 0
             
@@ -182,7 +206,7 @@ extension ChatViewController: UITableViewDataSource {
                 cell.label_timestamp.text = time.toDayTime
             }
             
-            let url = URL(string: (self.userModel?.profileImageUrl)!)
+            let url = URL(string: (self.destinationUserModel?.profileImageUrl)!)
             URLSession.shared.dataTask(with: url!) { data, response, error in
                 DispatchQueue.main.async {
                     cell.imageView_Profile.image = UIImage(data: data!)
