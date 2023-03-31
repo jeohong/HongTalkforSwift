@@ -48,10 +48,13 @@ class PeopleViewController: UIViewController {
         selectFriendButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.right.equalTo(view).offset(-20)
+            make.width.height.equalTo(50)
         }
         
         selectFriendButton.backgroundColor = .black
         selectFriendButton.addTarget(self, action: #selector(showSelectFriendController), for: .touchUpInside)
+        selectFriendButton.layer.cornerRadius = 25
+        selectFriendButton.layer.masksToBounds = true
     }
     
     @objc

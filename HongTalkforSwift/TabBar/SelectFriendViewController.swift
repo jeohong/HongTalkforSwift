@@ -12,6 +12,7 @@ import BEMCheckBox
 class SelectFriendViewController: UIViewController {
     var array: [UserModel] = []
 
+    @IBOutlet weak var addChatButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
