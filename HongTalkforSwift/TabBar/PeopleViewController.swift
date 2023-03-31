@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
-import FirebaseDatabase
+import Kingfisher
 
 class PeopleViewController: UIViewController {
     var array: [UserModel] = []
@@ -82,14 +82,21 @@ extension PeopleViewController: UITableViewDataSource {
             make.left.equalTo(cell).offset(10)
             make.height.width.equalTo(50)
         }
-                
-        URLSession.shared.dataTask(with: URL(string: array[indexPath.row].profileImageUrl!)!) { data, response, error in
-            DispatchQueue.main.async {
-                imageView.image = UIImage(data: data!)
-                imageView.layer.cornerRadius = imageView.frame.size.width / 2
-                imageView.clipsToBounds = true
-            }
-        }.resume()
+        
+        // Kingfisher 사용
+        let url = URL(string: array[indexPath.row].profileImageUrl!)
+        imageView.layer.cornerRadius = 50 / 2
+        imageView.clipsToBounds = true
+        imageView.kf.setImage(with: url)
+        
+        // 킹피셔 라이브러리로 대체
+        //        URLSession.shared.dataTask(with: URL(string: array[indexPath.row].profileImageUrl!)!) { data, response, error in
+        //            DispatchQueue.main.async {
+        //                imageView.image = UIImage(data: data!)
+        //                imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        //                imageView.clipsToBounds = true
+        //            }
+        //        }.resume()
         
         let label = cell.label!
         label.snp.makeConstraints { make in

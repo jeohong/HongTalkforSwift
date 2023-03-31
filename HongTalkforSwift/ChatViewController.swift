@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import Alamofire
+import Kingfisher
 
 class ChatViewController: UIViewController {
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
@@ -207,13 +208,17 @@ extension ChatViewController: UITableViewDataSource {
             }
             
             let url = URL(string: (self.destinationUserModel?.profileImageUrl)!)
-            URLSession.shared.dataTask(with: url!) { data, response, error in
-                DispatchQueue.main.async {
-                    cell.imageView_Profile.image = UIImage(data: data!)
-                    cell.imageView_Profile.layer.cornerRadius = cell.imageView_Profile.frame.width / 2
-                    cell.imageView_Profile.clipsToBounds = true
-                }
-            }.resume()
+
+            cell.imageView_Profile.layer.cornerRadius = cell.imageView_Profile.frame.width / 2
+            cell.imageView_Profile.clipsToBounds = true
+            cell.imageView_Profile.kf.setImage(with: url)
+            
+            // 대체 -> 킹피셔 라이브러리 사용
+//            URLSession.shared.dataTask(with: url!) { data, response, error in
+//                DispatchQueue.main.async {
+//                    cell.imageView_Profile.image = UIImage(data: data!)
+//                }
+//            }.resume()
             
             return cell
         }

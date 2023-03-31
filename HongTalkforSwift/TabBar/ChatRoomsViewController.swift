@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class ChatRoomsViewController: UIViewController {
     @IBOutlet weak var chatRoomList: UITableView!
@@ -77,14 +78,20 @@ extension ChatRoomsViewController: UITableViewDataSource {
             
             cell.label_title.text = userModel.userName
             let url = URL(string: userModel.profileImageUrl!)
-            URLSession.shared.dataTask(with: url!) { data, response, error in
-                
-                DispatchQueue.main.async {
-                    cell.imageview.image = UIImage(data: data!)
-                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width / 2
-                    cell.imageview.layer.masksToBounds = true
-                }
-            }.resume()
+            
+            cell.imageview.layer.cornerRadius = cell.imageview.frame.width / 2
+            cell.imageview.layer.masksToBounds = true
+            cell.imageview.kf.setImage(with: url)
+            
+            // 킹피셔 대체
+//            URLSession.shared.dataTask(with: url!) { data, response, error in
+//
+//                DispatchQueue.main.async {
+//                    cell.imageview.image = UIImage(data: data!)
+//                    cell.imageview.layer.cornerRadius = cell.imageview.frame.width / 2
+//                    cell.imageview.layer.masksToBounds = true
+//                }
+//            }.resume()
             
             let lastMessageKey = self.chatrooms[indexPath.row].comments.keys.sorted(){ $0 > $1 }
             cell.label_lastMessage.text = self.chatrooms[indexPath.row].comments[lastMessageKey[0]]?.message
