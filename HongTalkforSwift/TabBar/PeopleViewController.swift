@@ -59,6 +59,7 @@ class PeopleViewController: UIViewController {
 // Delegate
 extension PeopleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let chatVC = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
         // 채팅할 대상의 uid 값을 넘겨줌
         chatVC?.destinationUid = self.array[indexPath.row].uid
@@ -127,6 +128,7 @@ extension PeopleViewController: UITableViewDataSource {
             }
             make.height.equalTo(30)
         }
+        
         return cell
     }
     

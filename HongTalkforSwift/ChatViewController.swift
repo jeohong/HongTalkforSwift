@@ -22,6 +22,9 @@ class ChatViewController: UIViewController {
     var comments: [ChatModel.Comment] = []
     var destinationUserModel: UserModel?
     
+    var databaseRef: DatabaseReference?
+    var observe: UInt?
+    
     public var destinationUid: String? // 채팅할 대상의 UID
     
     override func viewDidLoad() {
@@ -43,6 +46,8 @@ class ChatViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self)
         self.tabBarController?.tabBar.isHidden = false
+        
+        databaseRef?.removeObserver(withHandle: observe!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,7 +124,7 @@ class ChatViewController: UIViewController {
         
         let username = Auth.auth().currentUser?.displayName
         
-        var notificationModel = NotificationModel()
+        let notificationModel = NotificationModel()
         notificationModel.to = destinationUserModel?.pushToken
         notificationModel.notification.title = username
         notificationModel.notification.body = textField.text
@@ -128,8 +133,9 @@ class ChatViewController: UIViewController {
         
         let params = notificationModel.toJSON()
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { response in
-            print(response.result)
+            // response
         }
+        
     }
     
     // 중복 방 생성 방지
@@ -159,17 +165,28 @@ class ChatViewController: UIViewController {
     }
     
     func getMessageList() {
-        Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments").observe(.value) { dataSnapshot in
+        databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments")
+        observe = databaseRef?.observe(.value) { dataSnapshot in
             self.comments.removeAll()
+            var readUserDic: Dictionary<String,AnyObject> = [:]
             
             for item in dataSnapshot.children.allObjects as! [DataSnapshot] {
+                let key = item.key as String
                 let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
+                comment?.readUsers[self.uid!] = true
+                readUserDic[key] = comment?.toJSON() as! NSDictionary
+                
                 self.comments.append(comment!)
             }
-            self.chattingView.reloadData()
             
-            if self.comments.count > 0 {
-                self.chattingView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+            let nsDic = readUserDic as NSDictionary
+            dataSnapshot.ref.updateChildValues(nsDic as! [AnyHashable : Any]) { error, ref in
+                
+                self.chattingView.reloadData()
+                
+                if self.comments.count > 0 {
+                    self.chattingView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: .bottom, animated: true)
+                }
             }
         }
     }
@@ -208,17 +225,17 @@ extension ChatViewController: UITableViewDataSource {
             }
             
             let url = URL(string: (self.destinationUserModel?.profileImageUrl)!)
-
+            
             cell.imageView_Profile.layer.cornerRadius = cell.imageView_Profile.frame.width / 2
             cell.imageView_Profile.clipsToBounds = true
             cell.imageView_Profile.kf.setImage(with: url)
             
             // 대체 -> 킹피셔 라이브러리 사용
-//            URLSession.shared.dataTask(with: url!) { data, response, error in
-//                DispatchQueue.main.async {
-//                    cell.imageView_Profile.image = UIImage(data: data!)
-//                }
-//            }.resume()
+            //            URLSession.shared.dataTask(with: url!) { data, response, error in
+            //                DispatchQueue.main.async {
+            //                    cell.imageView_Profile.image = UIImage(data: data!)
+            //                }
+            //            }.resume()
             
             return cell
         }
