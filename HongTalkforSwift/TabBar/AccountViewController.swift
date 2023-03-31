@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountViewController: UIViewController {
     @IBOutlet weak var conditionsCommentButton: UIButton!
@@ -24,7 +25,11 @@ class AccountViewController: UIViewController {
         }
         
         alertController.addAction(UIAlertAction(title: "확인", style: .default) { action in
-            
+            if let textfield = alertController.textFields?.first {
+                let dic = ["comment":textfield.text!]
+                let uid = Auth.auth().currentUser?.uid
+                Database.database().reference().child("users").child(uid!).updateChildValues(dic)
+            }
         })
         
         alertController.addAction(UIAlertAction(title: "취소", style: .cancel) { action in

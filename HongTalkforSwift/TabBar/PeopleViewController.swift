@@ -106,6 +106,15 @@ extension PeopleViewController: UITableViewDataSource {
         
         label.text = array[indexPath.row].userName
         
+        let label_comment = cell.label_comment!
+        label_comment.snp.makeConstraints { make in
+            make.right.equalTo(cell).offset(-5)
+            make.centerY.equalTo(cell)
+        }
+        if let comment = array[indexPath.row].comment {
+            label_comment.text = comment
+        }
+        
         return cell
     }
     
@@ -117,11 +126,13 @@ extension PeopleViewController: UITableViewDataSource {
 class PeopleViewTableCell: UITableViewCell {
     var imageview: UIImageView! = UIImageView()
     var label: UILabel! = UILabel()
+    var label_comment: UILabel! = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(imageview)
         self.addSubview(label)
+        self.addSubview(label_comment)
     }
     
     required init?(coder: NSCoder) {
