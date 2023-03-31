@@ -164,6 +164,24 @@ class ChatViewController: UIViewController {
         }
     }
     
+    func setReadCount(label: UILabel?, position: Int?) {
+        let readCount = self.comments[position!].readUsers.count
+        
+        Database.database().reference().child("chatrooms").child(chatRoomUid!).child("users").observeSingleEvent(of: .value) { dataSnapshaot in
+            let dic = dataSnapshaot.value as! [String:Any]
+            
+            let noReadCount = dic.count - readCount
+            
+            if(noReadCount > 0) {
+                label?.isHidden = false
+                label?.text = String(noReadCount)
+            } else {
+                label?.isHidden = true
+            }
+        }
+        
+    }
+    
     func getMessageList() {
         databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomUid!).child("comments")
         observe = databaseRef?.observe(.value) { dataSnapshot in
@@ -213,6 +231,8 @@ extension ChatViewController: UITableViewDataSource {
                 cell.label_timestamp.text = time.toDayTime
             }
             
+            setReadCount(label: cell.readCount, position: indexPath.row)
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DestinationMessageCell", for: indexPath) as! DestinationMessageCell
@@ -237,6 +257,8 @@ extension ChatViewController: UITableViewDataSource {
             //                }
             //            }.resume()
             
+            setReadCount(label: cell.readCount, position: indexPath.row)
+            
             return cell
         }
     }
@@ -245,6 +267,7 @@ extension ChatViewController: UITableViewDataSource {
 class MyMessageCell: UITableViewCell {
     @IBOutlet weak var label_message: UILabel!
     @IBOutlet weak var label_timestamp: UILabel!
+    @IBOutlet weak var readCount: UILabel!
 }
 
 class DestinationMessageCell: UITableViewCell {
@@ -252,4 +275,5 @@ class DestinationMessageCell: UITableViewCell {
     @IBOutlet weak var imageView_Profile: UIImageView!
     @IBOutlet weak var label_name: UILabel!
     @IBOutlet weak var label_timestamp: UILabel!
+    @IBOutlet weak var readCount: UILabel!
 }

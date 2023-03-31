@@ -310,6 +310,12 @@
                                                     <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-jR-rVn">
+                                                    <rect key="frame" x="302.66666666666669" y="27" width="16" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7iS-1m-mSd" firstAttribute="top" secondItem="Bbg-XH-Yqj" secondAttribute="bottom" constant="16" id="0W8-ge-zhq"/>
@@ -318,15 +324,18 @@
                                                 <constraint firstItem="Bbg-XH-Yqj" firstAttribute="top" secondItem="gVz-kE-CLS" secondAttribute="topMargin" id="4UA-Oz-648"/>
                                                 <constraint firstItem="Bbg-XH-Yqj" firstAttribute="trailing" secondItem="gVz-kE-CLS" secondAttribute="trailingMargin" id="8z2-Xa-dDo"/>
                                                 <constraint firstItem="cPe-12-rD0" firstAttribute="leading" secondItem="Bbg-XH-Yqj" secondAttribute="leading" constant="-10" id="FJW-ts-2e9"/>
+                                                <constraint firstItem="K4P-jR-rVn" firstAttribute="bottom" secondItem="cPe-12-rD0" secondAttribute="bottom" id="M82-VK-Cet"/>
                                                 <constraint firstAttribute="trailing" secondItem="7iS-1m-mSd" secondAttribute="trailing" constant="10" id="dLw-hx-lPc"/>
                                                 <constraint firstItem="cPe-12-rD0" firstAttribute="top" secondItem="Bbg-XH-Yqj" secondAttribute="top" constant="-10" id="g4s-nN-sQS"/>
                                                 <constraint firstItem="cPe-12-rD0" firstAttribute="bottom" secondItem="Bbg-XH-Yqj" secondAttribute="bottom" constant="10" id="ids-jD-ldy"/>
+                                                <constraint firstItem="cPe-12-rD0" firstAttribute="leading" secondItem="K4P-jR-rVn" secondAttribute="trailing" constant="3" id="jbd-yD-N3z"/>
                                                 <constraint firstItem="cPe-12-rD0" firstAttribute="trailing" secondItem="Bbg-XH-Yqj" secondAttribute="trailing" constant="10" id="r5u-cb-UzJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label_message" destination="Bbg-XH-Yqj" id="vO6-UZ-9a9"/>
                                             <outlet property="label_timestamp" destination="7iS-1m-mSd" id="DHO-Tx-0wb"/>
+                                            <outlet property="readCount" destination="K4P-jR-rVn" id="YvX-BS-AOE"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DestinationMessageCell" id="kZ1-8A-oPx" customClass="DestinationMessageCell" customModule="HongTalkforSwift" customModuleProvider="target">
@@ -364,8 +373,15 @@
                                                     <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYm-G3-Zc9">
+                                                    <rect key="frame" x="124.33333333333331" y="26.333333333333329" width="16" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="systemYellowColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="aYm-G3-Zc9" firstAttribute="leading" secondItem="uPn-Vl-jYa" secondAttribute="trailing" constant="3" id="139-hF-JfY"/>
                                                 <constraint firstItem="uPn-Vl-jYa" firstAttribute="bottom" secondItem="t5q-lY-5aF" secondAttribute="bottom" constant="10" id="9NA-6Q-Yq2"/>
                                                 <constraint firstItem="t5q-lY-5aF" firstAttribute="top" secondItem="C6y-7b-uli" secondAttribute="topMargin" id="A1C-tp-Hgh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zcl-HL-wG7" secondAttribute="bottom" constant="0.5" id="Gng-OM-2JL"/>
@@ -375,6 +391,7 @@
                                                 <constraint firstItem="uPn-Vl-jYa" firstAttribute="leading" secondItem="t5q-lY-5aF" secondAttribute="leading" constant="-10" id="ZzR-Dd-rUb"/>
                                                 <constraint firstItem="uPn-Vl-jYa" firstAttribute="top" secondItem="t5q-lY-5aF" secondAttribute="top" constant="-10" id="e0a-c9-I4T"/>
                                                 <constraint firstItem="n80-Dk-rje" firstAttribute="top" secondItem="C6y-7b-uli" secondAttribute="top" id="eAG-Je-TsL"/>
+                                                <constraint firstItem="aYm-G3-Zc9" firstAttribute="bottom" secondItem="uPn-Vl-jYa" secondAttribute="bottom" id="fL7-hq-zbE"/>
                                                 <constraint firstItem="Zcl-HL-wG7" firstAttribute="top" secondItem="t5q-lY-5aF" secondAttribute="bottom" constant="16" id="hbJ-2l-aVt"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="t5q-lY-5aF" secondAttribute="trailing" constant="65" id="j40-jy-Hgx"/>
                                                 <constraint firstItem="dfW-2p-BiW" firstAttribute="top" secondItem="n80-Dk-rje" secondAttribute="bottom" id="rA3-MD-6Ye"/>
@@ -387,6 +404,7 @@
                                             <outlet property="label_message" destination="t5q-lY-5aF" id="bJz-f6-fux"/>
                                             <outlet property="label_name" destination="dfW-2p-BiW" id="yiP-Mz-Olj"/>
                                             <outlet property="label_timestamp" destination="Zcl-HL-wG7" id="03U-Ur-dEG"/>
+                                            <outlet property="readCount" destination="aYm-G3-Zc9" id="IzI-4t-irM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -558,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9p-3J-stB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8495" y="4"/>
+            <point key="canvasLocation" x="7167" y="4"/>
         </scene>
         <!--People-->
         <scene sceneID="MZA-1P-Fd0">
@@ -632,6 +650,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
