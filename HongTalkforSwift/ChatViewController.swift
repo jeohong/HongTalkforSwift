@@ -113,7 +113,7 @@ class ChatViewController: UIViewController {
         
         let header: HTTPHeaders = [
             "Content-Type":"application/json",
-            "Authorization":"key="
+            "Authorization":"key=\(API_KEY.FirebaseServer.rawValue)"
         ]
         
         let username = Auth.auth().currentUser?.displayName
