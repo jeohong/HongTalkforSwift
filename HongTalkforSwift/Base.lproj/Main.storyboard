@@ -454,7 +454,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJd-q7-ebL">
-                                                    <rect key="frame" x="70" y="47" width="26.333333333333314" height="12"/>
+                                                    <rect key="frame" x="70" y="47" width="26.333333333333329" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -533,18 +533,32 @@
         <!--Account-->
         <scene sceneID="qeU-nB-t9F">
             <objects>
-                <viewController id="LxR-tl-ti5" sceneMemberID="viewController">
+                <viewController id="LxR-tl-ti5" customClass="AccountViewController" customModule="HongTalkforSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfk-Eq-Vny">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxp-Cg-WyN">
+                                <rect key="frame" x="131" y="109" width="131.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="상태메세지 변경"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="axz-oG-P1D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bxp-Cg-WyN" firstAttribute="centerX" secondItem="dfk-Eq-Vny" secondAttribute="centerX" id="7i6-2L-1OQ"/>
+                            <constraint firstItem="bxp-Cg-WyN" firstAttribute="top" secondItem="axz-oG-P1D" secondAttribute="top" constant="50" id="Jam-h8-79K"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" image="accountIcon" id="KiW-yI-tfi"/>
+                    <connections>
+                        <outlet property="conditionsCommentButton" destination="bxp-Cg-WyN" id="FRm-IE-2GV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9p-3J-stB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9197.7099236641225" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="8495" y="4"/>
         </scene>
         <!--People-->
         <scene sceneID="MZA-1P-Fd0">
