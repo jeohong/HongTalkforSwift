@@ -108,13 +108,25 @@ extension PeopleViewController: UITableViewDataSource {
         
         let label_comment = cell.label_comment!
         label_comment.snp.makeConstraints { make in
-            make.right.equalTo(cell).offset(-5)
-            make.centerY.equalTo(cell)
+            make.centerX.equalTo(cell.commentBackground)
+            make.centerY.equalTo(cell.commentBackground)
         }
         if let comment = array[indexPath.row].comment {
             label_comment.text = comment
         }
         
+        cell.commentBackground.snp.makeConstraints { make in
+            make.right.equalTo(cell).offset(-10)
+            make.centerY.equalTo(cell)
+            
+            // 글자 수 세서 뷰의 배경길이 배치
+            if let count = label_comment.text?.count {
+                make.width.equalTo(count * 10)
+            } else {
+                make.width.equalTo(0)
+            }
+            make.height.equalTo(30)
+        }
         return cell
     }
     
@@ -127,11 +139,13 @@ class PeopleViewTableCell: UITableViewCell {
     var imageview: UIImageView! = UIImageView()
     var label: UILabel! = UILabel()
     var label_comment: UILabel! = UILabel()
+    var commentBackground: UIView = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(imageview)
         self.addSubview(label)
+        self.addSubview(commentBackground)
         self.addSubview(label_comment)
     }
     
